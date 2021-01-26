@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catgories>
+	<category>
+		<n>整租</n>
+		<id>8</id>
+	</category>
+	<category>
+		<n>合租</n>
+		<id>10</id>
+	</category>
+	<category>
+		<n>二手房</n>
+		<id>12</id>
+	</category>
+	<category>
+		<n>写字楼租售</n>
+		<id>13</id>
+		<category>
+			<n>写字楼出租</n>
+			<id>1301</id>
+		</category>
+		<category>
+			<n>写字楼出售</n>
+			<id>1302</id>
+		</category>
+	</category>
+	<category>
+		<n>商铺租售/生意转让</n>
+		<id>14</id>
+		<category>
+			<n>商铺出租</n>
+			<id>1401</id>
+		</category>
+		<category>
+			<n>商铺出售</n>
+			<id>1402</id>
+		</category>
+		<category>
+			<n>生意转让</n>
+			<id>1403</id>
+		</category>
+	</category>
+	<category>
+		<n>厂房/土地/仓库</n>
+		<id>15</id>
+		<category>
+			<n>厂房/土地/仓库 出租</n>
+			<id>1501</id>
+		</category>
+		<category>
+			<n>厂房/土地/仓库 出售</n>
+			<id>1502</id>
+		</category>
+		<category>
+			<n>厂房/土地/仓库 转让</n>
+			<id>1503</id>
+		</category>
+	</category>
+</catgories>

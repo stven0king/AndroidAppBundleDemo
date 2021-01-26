@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button buttonFeatureOne = findViewById(R.id.btn_feature_one);
         Button buttonFeatureTwo = findViewById(R.id.btn_feature_two);
+        Button buttonFeatureThree = findViewById(R.id.btn_feature_three);
 
         buttonFeatureOne.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 loadFeatureTwo();
+            }
+        });
+
+        buttonFeatureThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadFeatureThree();
             }
         });
     }
@@ -92,8 +100,26 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    public void loadFeatureThree(){
+        SplitInstallRequest request = SplitInstallRequest.newBuilder().addModule("feature3").build();
+
+        splitInstallManager.startInstall(request).addOnSuccessListener(new OnSuccessListener<Integer>() {
+            @Override
+            public void onSuccess(Integer integer) {
+                Intent intent = new Intent().setClassName(getPackageName(), "com.example.feature3.Feature3Activity");
+                startActivity(intent);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(Exception e) {
+                Toast.makeText(getApplicationContext(), "Couldn't download feature3: " + e.getMessage(), Toast.LENGTH_LONG).show();
+
+            }
+        });
+    }
+
     public void loadFeatureTwo() {
-        // Builds a request to install the feature1 module
+        // Builds a request to install the feature2 module
         SplitInstallRequest request =
                 SplitInstallRequest
                         .newBuilder()
@@ -103,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                         .addModule("feature2")
                         .build();
 
-        // Begin the installation of the feature1 module and handle success/failure
+        // Begin the installation of the feature2 module and handle success/failure
         splitInstallManager
                 .startInstall(request)
                 .addOnSuccessListener(new OnSuccessListener<Integer>() {

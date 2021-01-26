@@ -18,4 +18,5 @@
     <string name="app_name">AndroidAppBundleDemo</string>
     <string name="title_feature1">Feature 1</string>
     <string name="title_feature2">Feature 2</string>
+    <string name="title_feature3">Feature3</string>
 </resources>

@@ -45,12 +45,27 @@ android {
         language {
             // This is disabled so that the App Bundle does NOT split the APK for each language.
             // We're gonna use the same APK for all languages.
-            enableSplit false
+            enableSplit true
         }
     }
 
     // Dynamic feature modules
-    dynamicFeatures = [":feature1", ":feature2"]
+    dynamicFeatures = [":feature1", ":feature2", ":feature3"]
+
+
+    //签名使用
+//    signingConfigs {
+//        bangbang {
+//            storeFile file("${keyStoreDir}/${keyStoreName}")
+//            storePassword "${keyStorePassword}"
+//            keyAlias "${keyStoreAlias}"
+//            keyPassword "${keyStoreAliasPassword}"
+//            v1SigningEnabled true
+//            v2SigningEnabled true
+//        }
+//    }
+
+
 }
 
 dependencies {
